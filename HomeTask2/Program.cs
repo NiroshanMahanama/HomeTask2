@@ -14,34 +14,54 @@ namespace HomeTask2
 
                 static void Main(string[] args)
         {
-            //User input nominal value
+            // User input nominal value
             Console.WriteLine("Please insert the nominal");
             var fnominal = Console.ReadLine();
             var nominal = float.Parse(fnominal);
             Console.WriteLine($"Nominal is:  {nominal}");
 
-            //User input trade price
+            // User input trade price
             Console.WriteLine("Please insert the trade price");
             var ftradePrice = Console.ReadLine();
             var tradePrice = float.Parse(ftradePrice);
-            Console.WriteLine(ftradePrice);
             Console.WriteLine($"Trade Price is:  {tradePrice}");
 
-            //User input transaction type
+            // User input transaction type
             TransactionType trcType;
-            Console.WriteLine("Please insert transaction type - Buy or Sell");
+            Console.WriteLine("Please insert transaction type - Buy or Sell ?");
             string userInput = Console.ReadLine();
             trcType = (TransactionType)Enum.Parse(typeof(TransactionType), userInput, true);
             
-            //Current value calculation
+            // Current value calculation
 
            double currentValue = ((double)trcType) * nominal * tradePrice;
 
            Console.WriteLine($"The current value of transaction is: {currentValue}");
 
+            //Original price defined
+            
+            var originalPrice = tradePrice;
 
-                      
-           Console.ReadLine();
+            // second trade
+            // Final price input
+
+            Console.WriteLine("Please insert the final pirce");
+            var fcurrentPrice = Console.ReadLine();
+            var currentPrice = float.Parse(fcurrentPrice);
+
+            // Traded nominal input
+
+            Console.WriteLine("Please insert the trade nominal");
+            var ftradeNominal = Console.ReadLine();
+            var tradeNominal = float.Parse(ftradeNominal);
+
+                     
+            // profit/Loss calculation
+
+            var PL = (currentPrice - originalPrice) * tradeNominal;
+            Console.WriteLine($"Profit/Loss of the investment is : {PL}");
+
+            Console.ReadLine();
         }
     }
 }
