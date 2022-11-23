@@ -19,13 +19,13 @@ namespace HomeTask2
             // User input nominal value
             Console.WriteLine("Please insert the nominal");
             var fnominal = Console.ReadLine();
-            var nominal = float.Parse(fnominal);
+            var nominal = double.Parse(fnominal);
             Console.WriteLine($"Nominal is:  {nominal}");
 
             // User input trade price
             Console.WriteLine("Please insert the trade price");
             var ftradePrice = Console.ReadLine();
-            var tradePrice = float.Parse(ftradePrice);
+            var tradePrice = double.Parse(ftradePrice);
             Console.WriteLine($"Trade Price is:  {tradePrice}");
 
             // User input transaction type
@@ -49,13 +49,13 @@ namespace HomeTask2
 
             Console.WriteLine("Please insert the final pirce");
             var fcurrentPrice = Console.ReadLine();
-            var currentPrice = float.Parse(fcurrentPrice);
+            var currentPrice = double.Parse(fcurrentPrice);
 
             // Traded nominal input
 
             Console.WriteLine("Please insert the trade nominal");
             var ftradeNominal = Console.ReadLine();
-            var tradeNominal = float.Parse(ftradeNominal);
+            var tradeNominal = double.Parse(ftradeNominal);
 
 
             // profit/Loss calculation
