@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace HomeTask2
 {
 
-    enum TransactionType { Buy = 1, Sell= -1 }
+    
 
     class Program
     {
