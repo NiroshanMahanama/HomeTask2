@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace HomeTask2
 {
 
@@ -55,10 +57,11 @@ namespace HomeTask2
             var ftradeNominal = Console.ReadLine();
             var tradeNominal = float.Parse(ftradeNominal);
 
-                     
+
             // profit/Loss calculation
 
-            var PL = (currentPrice - originalPrice) * tradeNominal;
+            var PL = trcType == TransactionType.Buy ? (currentPrice - originalPrice) * tradeNominal : 0 ;
+            
             Console.WriteLine($"Profit/Loss of the investment is : {PL}");
 
             Console.ReadLine();
