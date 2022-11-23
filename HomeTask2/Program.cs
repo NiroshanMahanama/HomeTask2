@@ -6,32 +6,42 @@ using System.Threading.Tasks;
 
 namespace HomeTask2
 {
+
+    enum TransactionType { Buy = 1, Sell= -1 }
+
     class Program
     {
-        static void Main(string[] args)
+
+                static void Main(string[] args)
         {
-            Console.WriteLine("Please insert the nominal value");
-            var nominal = Console.ReadLine();
-            var fnominal = float.Parse(nominal);
-            Console.WriteLine($"The Nominal Value is:  {fnominal}");
+            //User input nominal value
+            Console.WriteLine("Please insert the nominal");
+            var fnominal = Console.ReadLine();
+            var nominal = float.Parse(fnominal);
+            Console.WriteLine($"Nominal is:  {nominal}");
 
+            //User input trade price
             Console.WriteLine("Please insert the trade price");
-            var tradePrice = Console.ReadLine();
-            var ftradePrice = float.Parse(tradePrice);
+            var ftradePrice = Console.ReadLine();
+            var tradePrice = float.Parse(ftradePrice);
             Console.WriteLine(ftradePrice);
-            Console.WriteLine($"The Trade Price is:  {ftradePrice}");
+            Console.WriteLine($"Trade Price is:  {tradePrice}");
+
+            //User input transaction type
+            TransactionType trcType;
+            Console.WriteLine("Please insert transaction type - Buy or Sell");
+            string userInput = Console.ReadLine();
+            trcType = (TransactionType)Enum.Parse(typeof(TransactionType), userInput, true);
+            
+            //Current value calculation
+
+           double currentValue = ((double)trcType) * nominal * tradePrice;
+
+           Console.WriteLine($"The current value of transaction is: {currentValue}");
 
 
-            /*
-            var nominal = 33.33f;
-            var tadePrice = 33.33f;
-
-            Console.WriteLine("Please input 2nd numner");
-            string secondNumber = Console.ReadLine();
-            int intsecondNumber = int.Parse(secondNumber);
-
-            */
-            Console.ReadLine();
+                      
+           Console.ReadLine();
         }
     }
 }
